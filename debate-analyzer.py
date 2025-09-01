@@ -369,22 +369,65 @@ with tab_learn:
 - **Qualifier (Q):** Limits or strength of the claim (e.g., *probably*, *often*).
 - **Backing (B):** Extra support for the warrant (data, theory, authority).
 - **Rebuttal (R):** When or why the claim might not hold; counter-cases.
+
+**Example**
+- **Claim:** Schools should start later.
+- **Grounds:** Studies show teens learn better after 9 a.m.
+- **Warrant:** Policy should follow evidence that improves learning.
+- **Backing:** Sleep research on circadian rhythms.
+- **Qualifier:** Especially for secondary schools.
+- **Rebuttal:** Except where transport or safety cannot be solved yet.
 """)
 
     st.subheader("Fallacies")
     st.markdown("""
 **1) Circular reasoning** - The claim is used as its own proof.  
-**2) Fallacy of logic** - The reasoning does not follow.  
+*“It's true because it's true.”*
+
+**2) Fallacy of logic** - The reasoning does not follow or is inconsistent (a general logic error).  
+*The conclusion doesn't follow from the reasons.*
+
 **3) Equivocation** - A key word changes meaning mid-argument.  
-**4) Fallacy of credibility** - Leaning on status/authority.  
+*“fair” meaning “just” vs “pleasant”.*
+
+**4) Fallacy of credibility** - Leaning on status/authority instead of evidence, or using a biased/irrelevant expert.  
+*“A famous YouTuber says so.”*
+
 **5) Ad populum** - “Everyone believes it” → so it must be true.  
-**6) Fallacy of extension** - Exaggerating opponent's point.  
-**7) Intentional** - Assuming intent proves truth.  
-**8) Faulty generalization** - Big rule from little data.  
-**9) Appeal to emotion** - Feelings replace evidence.  
-**10) Fallacy of relevance** - Off-topic distraction.  
-**11) False dilemma** - Only two choices given.  
-**12) Ad hominem** - Attack person not argument.  
-**13) False causality** - Assuming cause from timing.  
-**14) Miscellaneous** - Other mixed errors.
+*Popularity ≠ proof.*
+
+**6) Fallacy of extension** - Extending or exaggerating the opponent's point to attack it (straw-man style).  
+*“You want rules? So you want a police state.”*
+
+**7) Intentional** - Arguing about intent to prove truth or excuse harm; assuming good/bad intent decides the claim.  
+*“They meant well, so the policy works.”*
+
+**8) Faulty generalization** - Drawing a big rule from too little or unrepresentative data.  
+*One story ⇒ a universal rule.*
+
+**9) Appeal to emotion** - Using fear, pity, anger, pride as the main “reason.”  
+*Feelings replace evidence.*
+
+**10) Fallacy of relevance** - Bringing in points that are off-topic or distract (red herring/whataboutism).  
+*Changes subject instead of answering.*
+
+**11) False dilemma** - Pretending there are only two choices when more exist.  
+*“With us or against us.”*
+
+**12) Ad hominem** - Attacking the person instead of the argument.  
+*“You're lazy, so your idea is wrong.”*
+
+**13) False causality** - Assuming cause from timing or correlation.  
+*After X came Y ⇒ X caused Y.*
+
+**14) Miscellaneous** - Mixed or minor errors that don't fit the above labels; still weaken clarity or logic.
+""")
+
+    st.subheader("How to Strengthen Your Arguments")
+    st.markdown("""
+- State a clear **claim**, give solid **grounds**, and make the **warrant** explicit.
+- Use **qualifiers** (avoid absolute words like *always/never*).
+- Add **backing** from credible, relevant sources.
+- Address **rebuttals** fairly and show why your claim still stands.
+- Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
