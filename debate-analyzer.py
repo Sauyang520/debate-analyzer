@@ -26,6 +26,7 @@ try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
     nltk.download("punkt")
+    nltk.download("punkt_tab")
 
 # ==== Session state ====
 for key, default in {
@@ -434,3 +435,4 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
