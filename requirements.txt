@@ -1,0 +1,10 @@
+streamlit>=1.34
+wordcloud
+matplotlib
+nltk
+pandas
+numpy
+torch
+transformers>=4.40
+deepmultilingualpunctuation
+google-generativeai
