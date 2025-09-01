@@ -86,9 +86,9 @@ with tab_analyze:
     @st.cache_resource(show_spinner=False)
     def load_arg_classifier():
         from transformers import AutoTokenizer, AutoModelForSequenceClassification
-        model_path = "3_model/deberta-v3"  # Local model path
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
-        model = AutoModelForSequenceClassification.from_pretrained(model_path)
+        model_name = "Sauyang/argument-labelling-deberta-v3"  # Hugging Face model
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model = AutoModelForSequenceClassification.from_pretrained(model_name)
         model.eval()
         if torch.cuda.is_available():
             model.cuda()
@@ -263,7 +263,7 @@ with tab_analyze:
                 for j in range(ct.shape[1]):
                     ax_hm.text(j, i, str(ct.values[i, j]), ha="center", va="center", fontsize=8)
             fig_hm.colorbar(im, ax=ax_hm, shrink=0.8).set_label("Count")
-            ax_hm.set_title("Argument Type × Fallacy Heatmap", fontsize=12, pad=6)
+            ax_hm.set_title("Argument Type x Fallacy Heatmap", fontsize=12, pad=6)
             st.pyplot(fig_hm, use_container_width=True)
 
         # ROW 3
@@ -296,13 +296,11 @@ with tab_analyze:
         # ------------------ Gemini (kept as in your version) ------------------
         import google.generativeai as genai
         
-        # Load Gemini API key
         GEMINI_API_KEY = "AIzaSyDEvdpMOA85iX3_eYyHNseWAsq-iSO8XWw"
         genai.configure(api_key=GEMINI_API_KEY)
         
         advice = ""
         def get_gemini_recommendations(df, model_name="gemini-2.0-flash"):
-            # Build a compact summary of results to send
             summary = []
             for _, row in df.iterrows():
                 summary.append(f"Sentence: {row['sentence']}\n"
@@ -322,11 +320,9 @@ with tab_analyze:
             Transcript analysis:
             {summary_text}
             """
-        
-            # model = genai.GenerativeModel(model_name)
-            # response = model.generate_content(prompt)
-            # return response.text if response else "No recommendations generated."
-            return ""
+            model = genai.GenerativeModel(model_name)
+            response = model.generate_content(prompt)
+            return response.text if response else "No recommendations generated."
         
         if GEMINI_API_KEY:
             st.subheader("Gemini Flash 2.0 Recommendations")
@@ -373,66 +369,22 @@ with tab_learn:
 - **Qualifier (Q):** Limits or strength of the claim (e.g., *probably*, *often*).
 - **Backing (B):** Extra support for the warrant (data, theory, authority).
 - **Rebuttal (R):** When or why the claim might not hold; counter-cases.
-
-**Example**
-- **Claim:** Schools should start later.
-- **Grounds:** Studies show teens learn better after 9 a.m.
-- **Warrant:** Policy should follow evidence that improves learning.
-- **Backing:** Sleep research on circadian rhythms.
-- **Qualifier:** Especially for secondary schools.
-- **Rebuttal:** Except where transport or safety cannot be solved yet.
 """)
 
     st.subheader("Fallacies")
     st.markdown("""
 **1) Circular reasoning** - The claim is used as its own proof.  
-*“It's true because it's true.”*
-
-**2) Fallacy of logic** - The reasoning does not follow or is inconsistent (a general logic error).  
-*The conclusion doesn't follow from the reasons.*
-
+**2) Fallacy of logic** - The reasoning does not follow.  
 **3) Equivocation** - A key word changes meaning mid-argument.  
-*“fair” meaning “just” vs “pleasant”.*
-
-**4) Fallacy of credibility** - Leaning on status/authority instead of evidence, or using a biased/irrelevant expert.  
-*“A famous YouTuber says so.”*
-
+**4) Fallacy of credibility** - Leaning on status/authority.  
 **5) Ad populum** - “Everyone believes it” → so it must be true.  
-*Popularity ≠ proof.*
-
-**6) Fallacy of extension** - Extending or exaggerating the opponent's point to attack it (straw-man style).  
-*“You want rules? So you want a police state.”*
-
-**7) Intentional** - Arguing about intent to prove truth or excuse harm; assuming good/bad intent decides the claim.  
-*“They meant well, so the policy works.”*
-
-**8) Faulty generalization** - Drawing a big rule from too little or unrepresentative data.  
-*One story ⇒ a universal rule.*
-
-**9) Appeal to emotion** - Using fear, pity, anger, pride as the main “reason.”  
-*Feelings replace evidence.*
-
-**10) Fallacy of relevance** - Bringing in points that are off-topic or distract (red herring/whataboutism).  
-*Changes subject instead of answering.*
-
-**11) False dilemma** - Pretending there are only two choices when more exist.  
-*“With us or against us.”*
-
-**12) Ad hominem** - Attacking the person instead of the argument.  
-*“You're lazy, so your idea is wrong.”*
-
-**13) False causality** - Assuming cause from timing or correlation.  
-*After X came Y ⇒ X caused Y.*
-
-**14) Miscellaneous** - Mixed or minor errors that don't fit the above labels; still weaken clarity or logic.
+**6) Fallacy of extension** - Exaggerating opponent's point.  
+**7) Intentional** - Assuming intent proves truth.  
+**8) Faulty generalization** - Big rule from little data.  
+**9) Appeal to emotion** - Feelings replace evidence.  
+**10) Fallacy of relevance** - Off-topic distraction.  
+**11) False dilemma** - Only two choices given.  
+**12) Ad hominem** - Attack person not argument.  
+**13) False causality** - Assuming cause from timing.  
+**14) Miscellaneous** - Other mixed errors.
 """)
-
-    st.subheader("How to Strengthen Your Arguments")
-    st.markdown("""
-- State a clear **claim**, give solid **grounds**, and make the **warrant** explicit.
-- Use **qualifiers** (avoid absolute words like *always/never*).
-- Add **backing** from credible, relevant sources.
-- Address **rebuttals** fairly and show why your claim still stands.
-- Replace emotional lines with **measurable impacts** and **clear comparisons**.
-""")
-
