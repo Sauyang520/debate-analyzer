@@ -295,8 +295,8 @@ with tab_analyze:
 
         # ------------------ Gemini (kept as in your version) ------------------
         import google.generativeai as genai
-        
-        GEMINI_API_KEY = "AIzaSyDEvdpMOA85iX3_eYyHNseWAsq-iSO8XWw"
+
+        GEMINI_API_KEY = st.secrets["gemini"]["api_key"]
         genai.configure(api_key=GEMINI_API_KEY)
         
         advice = ""
