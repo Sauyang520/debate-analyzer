@@ -192,7 +192,7 @@ with tab_analyze:
         df["fallacy_final"] = np.where(df["fallacy_score"] >= threshold, df["fallacy"], "None")
 
         # ===================== TABLE =====================
-        st.subheader("Labelled Sentences")
+        st.subheader("Labelled Sentences: Let's see what you have spoken out!")
         display_df = df[["No.", "sentence", "argument_type", "fallacy_final"]].rename(
             columns={"fallacy_final": "fallacy"}
         )
@@ -431,3 +431,4 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
