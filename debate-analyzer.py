@@ -60,7 +60,7 @@ with tab_analyze:
     st.session_state.fallacy_threshold = st.slider(
         "Fallacy Score Threshold",
         min_value=0.0, max_value=1.0, step=0.05,
-        value=0.7, format="%.2f"
+        value=0.8, format="%.2f"
     )
 
     candidate_text = ""
@@ -432,6 +432,7 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
 
 
 
