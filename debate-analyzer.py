@@ -316,6 +316,7 @@ with tab_analyze:
             - Give direct, professional, and actionable advice to improve (the flow, style, content, etc).
             - Be concise and critical: use short sentences or bullet points.
             - Avoid general textbook explanations, only refer to the transcript problems.
+            - Maximum 6 bullet points
 
             Transcript analysis:
             {summary_text}
@@ -431,5 +432,6 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
 
 
