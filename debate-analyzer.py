@@ -313,7 +313,7 @@ with tab_analyze:
 
             Instructions:
             - Focus only on the weaknesses and issues in this transcript.
-            - Give direct, professional, and actionable advice to improve (the flow, style, content, etc).
+            - Give direct, professional, and actionable advice to improve (the argument type flow, style, fallacy content, etc).
             - Be concise and critical: use short sentences or bullet points.
             - Avoid general textbook explanations, only refer to the transcript problems.
             - Maximum 6 bullet points
@@ -432,6 +432,7 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
 
 
 
