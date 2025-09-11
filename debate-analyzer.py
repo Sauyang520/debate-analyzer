@@ -309,13 +309,13 @@ with tab_analyze:
             summary_text = "\n".join(summary[:50])
         
             prompt = f"""
-            You are an experienced debate coach. Review the following transcript with identified argument types and fallacies.
+            You are an experienced debate coach. Review the transcript with identified argument types and fallacies.
 
-            Tasks:
-            1. Critically evaluate the overall flow and coherence of the debate.
-            2. Identify patterns in fallacy use and explain their impact on persuasiveness.
-            3. Provide targeted advice on how to strengthen each argument type (Claim, Grounds, Warrant/Qualifier).
-            4. Conclude with actionable debate strategies in concise bullet points.
+            Instructions:
+            - Focus only on the weaknesses and issues in this transcript.
+            - Give direct, professional, and actionable advice to improve (the flow, style, content, etc).
+            - Be concise and critical: use short sentences or bullet points.
+            - Avoid general textbook explanations, only refer to the transcript problems.
 
             Transcript analysis:
             {summary_text}
@@ -431,4 +431,5 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
 
