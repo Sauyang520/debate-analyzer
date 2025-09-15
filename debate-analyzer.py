@@ -361,7 +361,7 @@ with tab_learn:
     st.header("Toulmin Model & Fallacies")
 
     st.subheader("Toulmin Argument Model")
-    st.image("toulmin_argument.png", caption="Toulmin Argument", width=700)
+    st.image("toulmin_argument.png", caption="Toulmin Argument | Source: https://viva.pressbooks.pub/letsgetwriting/chapter/the-toulmin-argument-model/", width=700)
     st.markdown("""
 **Components**
 - **Claim (C):** The point you want the audience to accept.
@@ -432,6 +432,7 @@ with tab_learn:
 - Address **rebuttals** fairly and show why your claim still stands.
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
+
 
 
 
