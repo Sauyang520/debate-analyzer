@@ -433,6 +433,13 @@ with tab_learn:
 - Replace emotional lines with **measurable impacts** and **clear comparisons**.
 """)
 
+    st.markdown("""
+    
+    - Implementation Source Code and Processed Dataset: https://github.com/Sauyang520/debate-analyser-space
+    - DeBERTa Argument Type Classifier Model: https://huggingface.co/Sauyang/argument-labelling-deberta-v3
+    - Fallacy Detection Model: https://huggingface.co/q3fer/distilbert-base-fallacy-classification
+    """)
+
 
 
 
